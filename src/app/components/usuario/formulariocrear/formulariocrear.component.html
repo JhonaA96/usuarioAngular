@@ -1,0 +1,42 @@
+<div>
+    <form #CrearUsuarioForm="ngForm">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Tu nombre" [(ngModel)]="usuario.strNombre" name="strNombre">
+            <label for="strNombre">Nombre</label>
+        </div>
+    
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Tu apellido" [(ngModel)]="usuario.strApellido" name="strApellido">
+            <label for="strApellido">Apellido</label>
+        </div>
+    
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="usuario.strEmail" name="strEmail">
+            <label for="strEmail">Correo Electronico</label>
+        </div>
+    
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Tu telefono" [(ngModel)]="usuario.strTelefono" name="strTelefono">
+            <label for="strTelefono">Telefono</label>
+        </div>
+    
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="floatingInput" placeholder="Tu edad" [(ngModel)]="usuario.numEdad" name="numEdad">
+            <label for="numEdad">Edad</label>
+        </div>
+    
+        <div class="form-floating">
+            <select class="form-select" id="floatingSelect" [(ngModel)]="usuario.strGenero" name="strGenero">
+                <option selected>Seleccione su genero</option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+            </select>
+            <label for="strGenero">Genero</label>
+          </div>
+        
+          <div class="col-12 pt-4">
+            <button type="submit" class="btn btn-primary ps-2" (click)="crearUsuario()" [routerLink]="['/usuarios']">Crear</button>
+            <button type="submit" class="ms-2 btn btn-danger ps-2" [routerLink]="['/usuarios']">Canelar</button>
+          </div>
+    </form>
+</div>

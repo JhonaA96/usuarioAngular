@@ -1,0 +1,50 @@
+<div class="container-fluid">
+
+    <button 
+        type="button" 
+        class="btn btn-primary" 
+        data-toggle="button" 
+        aria-pressed="false" 
+        autocomplete="off"
+        [routerLink]="['/formularioCrearUsuario']"
+        >
+        Crear</button>
+
+    <table class="table table-hover table-inverse table-responsive">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Genero</th>
+                <th>Teléfono</th>
+                <th>Correo Electronico</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of usuarios">
+                    <td>{{usuario.strNombre}}</td>
+                    <td>{{usuario.strApellido}}</td>
+                    <td>{{usuario.numEdad}}</td>
+                    <td>{{usuario.strGenero}}</td>
+                    <td>{{usuario.strTelefono}}</td>
+                    <td>{{usuario.strEmail}}</td>
+                    <td>
+                        <button 
+                            type="button" 
+                            class="btn btn-primary" 
+                            [routerLink]="['/formularioEditarUsuario/', usuario.pkUsuario]"
+                            >
+                            Editar</button>
+                        <button 
+                            type="button" 
+                            class="ms-2 btn btn-danger" 
+                            (click)="eliminarUsuario(usuario.pkUsuario)"
+                            >
+                            Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+    </table>
+</div>
